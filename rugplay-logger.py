@@ -2,7 +2,6 @@ from playwright.sync_api import sync_playwright
 import json
 from datetime import datetime
 import os
-import time
 
 LOG_FILE = os.path.join(os.path.dirname(__file__), "rugplay_trades.log")
 
@@ -14,9 +13,9 @@ def try_log(payload):
             with open(LOG_FILE, "a", encoding="utf-8") as f:
                 f.write(log_entry)
                 f.flush()
-            print("Logged trade:", log_entry.strip())
+            print("📝 Logged:", log_entry.strip())
     except Exception as e:
-        print(f"[ERROR] Could not parse or write: {e}")
+        print(f"[⚠️ Error] Could not parse/write: {e}")
 
 def log_trades():
     with sync_playwright() as p:
@@ -29,9 +28,9 @@ def log_trades():
         page.on("websocket", handle_ws)
         page.goto("https://rugplay.com/live")
 
-        print("Logging live trades... Press Ctrl+C to stop.")
+        print("🔁 Logging live trades... Press Ctrl+C to stop.")
         while True:
-            time.sleep(60)
+            page.wait_for_timeout(2_000_000_000)  # Just under 24 days (becuase of 24signed integer and im too lazy to change it looolzzz)
 
 if __name__ == "__main__":
     log_trades()
