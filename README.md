@@ -1,7 +1,24 @@
-# rugplay-logger-and-gui
-Rugplay Logger and Gui
+# 🧾 Rugplay Logger & GUI Viewer
 
+🎮 **Live trade logger** and 🪟 **searchable GUI** for [rugplay.com/live] — track buys/sells with ease!
 
-run them both in the same directory
+---
 
-you can schedule the logger to run 24/7 and the gui you can start anytime
+## 🚀 How It Works
+
+- `rugplay-logger.py`: Logs live trades from Rugplay's public WebSocket into `rugplay_trades.log`
+- `rugplay_gui.py`: Lets you search, filter, and sort trades from the log file
+- Color-coded:
+  - 🟩 BUY = green
+  - 🟥 SELL = red
+- Supports auto-refresh and advanced sorting
+
+---
+
+## 📦 Requirements
+
+Install dependencies first:
+
+```bash
+pip install playwright
+playwright install
