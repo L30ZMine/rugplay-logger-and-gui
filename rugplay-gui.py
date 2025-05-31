@@ -8,13 +8,13 @@ import time
 import os
 
 LOG_FILE = os.path.join(os.path.dirname(__file__), "rugplay_trades.log")
-REFRESH_INTERVAL = 5  # seconds
+REFRESH_INTERVAL = 5  
 
 class TradeViewerApp:
     def __init__(self, root):
         self.root = root
         self.root.title("Rugplay Trade Viewer")
-        self.root.resizable(True, True)  # Enable resizing
+        self.root.resizable(False, False)
 
         self.sort_mode = tk.StringVar(value="Newest First")
         self.auto_refresh_enabled = False
@@ -56,7 +56,6 @@ class TradeViewerApp:
         scrollbar.grid(row=1, column=5, sticky="ns")
         self.text.config(yscrollcommand=scrollbar.set)
 
-        # Color tags
         self.text.tag_configure("BUY", foreground="green")
         self.text.tag_configure("SELL", foreground="red")
 
@@ -82,7 +81,6 @@ class TradeViewerApp:
         except Exception as e:
             messagebox.showerror("Read Error", f"An error occurred: {e}")
 
-        # Sort based on selected mode
         sort_by = self.sort_mode.get()
         if sort_by == "Most Value":
             trades.sort(key=lambda x: x.get("totalValue", 0), reverse=True)
@@ -130,7 +128,6 @@ class TradeViewerApp:
             self.search_trades()
             time.sleep(REFRESH_INTERVAL)
 
-# Run GUI
 if __name__ == "__main__":
     root = tk.Tk()
     app = TradeViewerApp(root)
