@@ -1,6 +1,6 @@
 # 🧾 Rugplay Logger & GUI Viewer
 
-🎮 **Live trade logger** and 🪟 **searchable GUI** for [rugplay.com/live] — track buys/sells with ease!
+🎮 **Live trade logger** and 🪟 **searchable GUI** for (Rugplay Live Trades)[rugplay.com/live] — track buys/sells with ease!
 
 ---
 
