@@ -25,5 +25,5 @@ Install dependencies first:
 ```bash
 pip install playwright
 playwright install
-
+```
 ![image](https://cdn.discordapp.com/attachments/1378494083730772122/1378494096913727670/64D0A4B0-E8BB-4714-A33F-0771A3F725F4.png)
