@@ -8,6 +8,8 @@
 
 - `rugplay-logger.py`: Logs live trades from Rugplay's public WebSocket into `rugplay_trades.log`
 - `rugplay_gui.py`: Lets you search, filter, and sort trades from the log file
+- make sure to put both in the same directory
+
 - Color-coded:
   - 🟩 BUY = green
   - 🟥 SELL = red
